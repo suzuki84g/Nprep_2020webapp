@@ -1,6 +1,6 @@
 var myBirthTime = new Date(1882, 11, 17, 12, 30);
 
-function updateParagraph() {
+function updateParagraph(){
     var now = new Date();
     var seconds = (now.getTime() - myBirthTime.getTime()) / 1000;
     document.getElementById('birth-time').innerText =
