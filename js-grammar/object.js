@@ -1,19 +1,24 @@
-var startTime = null;
-var displayArea = document.getElementById('display-area');
+var game = {
+    startTime: null,
+    displayArea: document.getElementById('display-area')
+};
+
+// var startTime = null;
+// var displayArea = document.getElementById('display-area');
 
 function start() {
-    startTime = Date.now();
+    game.startTime = Date.now();
     document.body.onkeydown = stop;
     // console.log('スタートしました');
 }
 
 function stop() {
     var currentTime = Date.now();
-    var seconds = (currentTime - startTime) / 1000;
+    var seconds = (currentTime - game.startTime) / 1000;
     if (9.5 <= seconds && seconds <= 10.5) {
-        displayArea.innerText = seconds + '秒でした。すごい。';
+        game.displayArea.innerText = seconds + '秒でした。すごい。';
     } else {
-        displayArea.innerText = seconds + '秒でした。残念。';
+        game.displayArea.innerText = seconds + '秒でした。残念。';
     }
     // console.log('ストップしました')
 }
