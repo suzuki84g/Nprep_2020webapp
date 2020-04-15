@@ -8,10 +8,11 @@ body {
     margin-left: auto;
 }
 button {
+    color: #fdffff;
     padding: 5px 20px;
     background-color: #337ab7;
     border-style: none;
   }
-  input {
+input {
     height: 20px;
   }
