@@ -1,4 +1,5 @@
 'use strict';  // 厳格モード
+
 const answers = [
     '{userName}のいいところは声です。{userName} の特徴的な声は皆を惹きつけ、心に残ります。',
     '{userName}のいいところはまなざしです。{userName}に見つめられた人は、気になって仕方がないでしょう。',
@@ -15,5 +16,29 @@ const answers = [
     '{userName}のいいところは好奇心です。新しいことに向かっていく{userName}の心構えが多くの人に魅力的に映ります。',
     '{userName}のいいところは気配りです。{userName}の配慮が多くの人を救っています。',
     '{userName}のいいところはその全てです。ありのままの{userName}自身がいいところなのです。',
-    '{userName}のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる{userName}が皆から評価されています。',
+    '{userName}のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる{userName}が皆から評価されています。'
 ];
+
+/**
+ * 名前の文字列を渡すと診断結果を返す関数
+ * @param {string} userName ユーザー名
+ * @returns {string} 診断結果
+ */
+
+function assessment(userName) {
+    // 全文字のコード番号を取得してそれを足し合わせる
+    let sumOfCharCode = 0;
+    for (let i = 0; i < userName.length; i++) {
+        sumOfCharCode = sumOfCharCode + userName.charCodeAt(i);
+    }
+
+    // 文字のコード番号の合計を回答の数で割って添字の数値を求める
+    const index = sumOfCharCode % answers.length;
+    const result = answers[index];
+
+    // #TODO:{userName}をユーザーの名前に置き換える
+    return result;
+}
+console.log(assessment('太郎'));
+console.log(assessment('次郎'));
+console.log(assessment('太郎'));
