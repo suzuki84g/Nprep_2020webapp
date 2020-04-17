@@ -41,9 +41,15 @@ function assessment(userName) {
     return result;
 }
 
-// #TODO:テストする項目を「入力が同じ名前で同じ診断結果を出力する処理」が正しいか、に変更する。
+// テストコード
 console.assert(
     assessment('太郎') ===
-    assessment('太郎'),  // 出力結果が同一の場合trueになる。
+    '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',  // 2箇所のuserNameが同じ文字列に置き換わるかを確認
+    '同名の実行結果が等しくありません。'
+);
+
+console.assert(
+    assessment('太郎') ===
+    assessment('太郎'),  // 出力結果が同一であるかのテスト
     '同名の実行結果が等しくありません。'
 );
