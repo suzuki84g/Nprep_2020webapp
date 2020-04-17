@@ -6,10 +6,16 @@ const resultDivided = document.getElementById('result-area');
 const tweetDivided = document.getElementById('tweet-area');
 
 assessmentButton.onclick = () => {
-    console.log('ボタンが押されました');
+    const userName = userNameInput.value;
+    if (userName.length === 0) {
+        // 名前が空の時（変数userNameのlengthが0である時）は処理を終了する。関数内の.logは実行されない。
+        // これはガード句と呼ばれる。
+        return;  // return値無しで戻り値無しで処理の終了となる。
+    }
+    console.log(userName);
     // #TODO:診断結果表示エリアの作成
     // #TODO:ツイートエリアの作成
-}
+};
 
 const answers = [
     '{userName}のいいところは声です。{userName} の特徴的な声は皆を惹きつけ、心に残ります。',
