@@ -15,6 +15,11 @@ assessmentButton.onclick = () => {
     console.log(userName);
 
     // #TODO:診断結果表示エリアの作成
+    while (resultDivided.firstChild) {
+        // 子要素がある限り削除
+        resultDivided.removeChild(resultDivided.firstChild);
+    }
+
     const header = document.createElement('h3');
     header.innerText = '診断結果';
     resultDivided.appendChild(header);
