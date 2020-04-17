@@ -1,25 +1,31 @@
 'use strict';  // 厳格モード
-
 const userNameInput = document.getElementById('user-name');
 const assessmentButton = document.getElementById('assessment');
 const resultDivided = document.getElementById('result-area');
 const tweetDivided = document.getElementById('tweet-area');
 
+/**
+ * 指定した要素の子供を全て削除する
+ * @param {HTMLElement} element HTMLの要素
+ */
+function removeAllChildren(element) {
+    while (element.firstChild) {
+        // 子要素がある限り削除
+        element.removeChild(element.firstChild);
+    }
+}
+
 assessmentButton.onclick = () => {
     const userName = userNameInput.value;
+
+    // 入力が空欄だった場合の対応
     if (userName.length === 0) {
-        // 名前が空の時（変数userNameのlengthが0である時）は処理を終了する。関数内の.logは実行されない。
-        // これはガード句と呼ばれる。
+        // 名前が空の時（変数userNameのlengthが0である時）は処理を終了する。関数内の.logは実行されない。ガード句。
         return;  // return値無しで戻り値無しで処理の終了となる。
     }
-    console.log(userName);
 
-    // #TODO:診断結果表示エリアの作成
-    while (resultDivided.firstChild) {
-        // 子要素がある限り削除
-        resultDivided.removeChild(resultDivided.firstChild);
-    }
-
+    // 診断結果表示エリアの作成
+    removeAllChildren(resultDivided);
     const header = document.createElement('h3');
     header.innerText = '診断結果';
     resultDivided.appendChild(header);
