@@ -1,5 +1,16 @@
 'use strict';  // 厳格モード
 
+const userNameInput = document.getElementById('user-name');
+const assessmentButton = document.getElementById('assessment');
+const resultDivided = document.getElementById('result-area');
+const tweetDivided = document.getElementById('tweet-area');
+
+assessmentButton.onclick = function() {
+    console.log('ボタンが押されました');
+    // #TODO:診断結果表示エリアの作成
+    // #TODO:ツイートエリアの作成
+}
+
 const answers = [
     '{userName}のいいところは声です。{userName} の特徴的な声は皆を惹きつけ、心に残ります。',
     '{userName}のいいところはまなざしです。{userName}に見つめられた人は、気になって仕方がないでしょう。',
