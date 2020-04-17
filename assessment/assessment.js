@@ -5,7 +5,7 @@ const assessmentButton = document.getElementById('assessment');
 const resultDivided = document.getElementById('result-area');
 const tweetDivided = document.getElementById('tweet-area');
 
-assessmentButton.onclick = function() {
+assessmentButton.onclick = () => {
     console.log('ボタンが押されました');
     // #TODO:診断結果表示エリアの作成
     // #TODO:ツイートエリアの作成
