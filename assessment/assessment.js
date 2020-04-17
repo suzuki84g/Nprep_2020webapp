@@ -36,6 +36,7 @@ assessmentButton.onclick = () => {
     resultDivided.appendChild(paragraph);
 
     // #TODO:ツイートエリアの作成
+    removeAllChildren(tweetDivided);
 };
 
 const answers = [
