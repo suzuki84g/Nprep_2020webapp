@@ -34,9 +34,10 @@ function assessment(userName) {
 
     // 文字のコード番号の合計を回答の数で割って添字の数値を求める
     const index = sumOfCharCode % answers.length;
-    const result = answers[index];
 
-    // #TODO:{userName}をユーザーの名前に置き換える
+    let result = answers[index];
+    result = result.replace(/\{userName\}/g, userName);
+
     return result;
 }
 console.log(assessment('太郎'));
